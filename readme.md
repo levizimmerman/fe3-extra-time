@@ -216,7 +216,7 @@ Every attribute that holds a date is consistent with following format `%Y-%m-%d 
 var parseTime = d3.timeParse('%Y-%m-%d %H:%M:%S %Z');
 ```
 
-This function parses all values to a number format. If a value cannot be parsed to a number, null will be returned. This is prevents weird bugs later in the development because now we know that value can be a number or `null`.
+This function parses all values to a number format. If a value cannot be parsed to a number, null will be returned. This prevents weird bugs later in the development because now we know that value can be a number or `null`.
 ```javascript
 function parseValue(value) {
   return isNaN(Number(value)) ? null : Number(value);

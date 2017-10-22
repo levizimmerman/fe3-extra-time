@@ -1,18 +1,18 @@
-# ![Extra Time][banner]
+# Extra Time - Learning New Things
+A description of the time I spent learning new things about D3 or Javascript.
 
-This repository can be forked for [**extra time**][et] of [frontend 3][fe3]
-at [**@CMDA**][cmda].
+## Overview
+Subject | Resources | Time
+--- | --- | ---
 
-## TODO
+## D3 Nesting
 
-*   [ ] Replace this document in your fork with your own readme!
+## Chaining `.map()` and `.filter()` functions
 
-[banner]: https://cdn.rawgit.com/cmda-fe3/logo/9fd877f/banner-extra-time.svg
+## TopoJSON
 
-[et]: https://github.com/cmda-fe3/course-17-18/blob/master/participation.md#extra-time
+## D3 Dispatch
 
-[fe3]: https://github.com/cmda-fe3
+## CSV Hierarchy with D3
 
-[cmda]: https://github.com/cmda
-
-[pages]: https://pages.github.com
+## Cleaning and Transforming Data (Advanced)

@@ -4,11 +4,11 @@ A description of the time I spent learning new things about D3 or Javascript.
 ## Table of Contents
 Subject | Resources | Time
 --- | --- | ---
-TopoJSON | [eu.topojson resource][euJSON], [example][exampleTopoJSON], [`.geoPath()` docs][geoPathDocs] | 6h
-CSV Hierarchy with D3 | [`.hierarchy()` docs][hierarchyDocs] | 2h
-D3 Nesting | [example][nestExample], [docs][nestDocs] | 5h
-Cleaning and Transforming Data (Advanced) | [XML parsing][xmlParsing], [My knowledge about JS and logic][leviLinkedIn] | 7h
-D3 Dispatch | [`.dispatch()` docs][dispatchDocs], [Pub-sub pattern definition][pubSubPattern] | 2h
+[TopoJSON][sectionTopoJSON] | [eu.topojson resource][euJSON], [example][exampleTopoJSON], [`.geoPath()` docs][geoPathDocs] | 6h
+[CSV Hierarchy with D3][sectionCsvHierarchyWithD3] | [`.hierarchy()` docs][hierarchyDocs] | 2h
+[D3 Nesting][sectionD3Nesting] | [example][nestExample], [docs][nestDocs] | 5h
+[Cleaning and Transforming Data (Advanced)][sectionCleaningAndTransformingData] | [XML parsing][xmlParsing], [My knowledge about JS and logic][leviLinkedIn] | 7h
+[D3 Dispatch][sectionD3Dispatch] | [`.dispatch()` docs][dispatchDocs], [Pub-sub pattern definition][pubSubPattern] | 2h
 
 ## TopoJSON (6h)
 For the [first assessment][firstAssessment] I have created a map of Europe displaying indoor toilets per country per year. To display the data on a map I had to figure out how to draw countries in SVG. I have used multiple examples ([example 1][euJSON], [example 2][exampleTopoJSON], [exmaple 3][zoomExampleMap]) to learn from. One of the biggest challenges was translating D3 V3 functions to D3 V4 functions. Also figuring out how each country is drawn from a TopoJSON file was interesting to learn.
@@ -223,7 +223,7 @@ function parseValue(value) {
 }
 ```
 
-Every type attribute has a prefix: 'HKQuantityTypeIdentifier' or 'HKCategoryTypeIdentifier'. Hence the `OR` operator within the [`.replace()`][jsReplace] function. Also this functions pushes the tyoe to a global `types` array. In this way you could log which types of records are transformed. 
+Every type attribute has a prefix: 'HKQuantityTypeIdentifier' or 'HKCategoryTypeIdentifier'. Hence the `OR` operator within the [`.replace()`][jsReplace] function. Also this functions pushes the tyoe to a global `types` array. In this way you could log which types of records are transformed.
 ```javascript
 function parseType(type) {
   type = type.replace(/HKQuantityTypeIdentifier|HKCategoryTypeIdentifier/g, '');
@@ -235,9 +235,9 @@ function parseType(type) {
 ```
 
 ## D3 Dispatch (2h)
-Last but not least the [`d3.dispatch()`][d3Dispatch] function. This may be misleading but I did not use the D3 dispatch function within any of my code. Instead I used a custom library that enables a [pub-sub code pattern][pubsubPattern] while developing the assigments and assessments. 
+Last but not least the [`d3.dispatch()`][d3Dispatch] function. This may be misleading but I did not use the D3 dispatch function within any of my code. Instead I used a custom library that enables a [pub-sub code pattern][pubsubPattern] while developing the assigments and assessments.
 
-It is a simple library that looks like this: 
+It is a simple library that looks like this:
 ```javascript
 var Events = {
     events: {},
@@ -277,7 +277,7 @@ var Events = {
 };
 ```
 
-I have used this pattern for multiple reasons: 
+I have used this pattern for multiple reasons:
 1. It ensures that my application is scaleable. I could write new functions that simply 'hooks' on emitted events.
 2. It prevents [spaghetti code][spaghetti]. You will not be caught in a crossfire of function calls.
 3. It creates a loggable overview of all possible events within your application and which function calls are connected to which event.
@@ -316,3 +316,8 @@ I used this library because I was not familiar with the [`d3.dispatch()`][d3Disp
 [d3Dispatch]: https://github.com/d3/d3-dispatch/blob/master/README.md#dispatch
 [spaghetti]: https://media.giphy.com/media/nOC6xDYlLXd3q/giphy.gif
 [wooorm]: https://github.com/wooorm
+[sectionTopoJSON]: https://github.com/levizimmerman/fe3-extra-time/blob/master/readme.md#topojson-6h
+[sectionCsvHierarchyWithD3]: https://github.com/levizimmerman/fe3-extra-time/blob/master/readme.md#csv-hierarchy-with-d3-2h
+[sectionD3Nesting]: https://github.com/levizimmerman/fe3-extra-time/blob/master/readme.md#d3-nesting-5h
+[sectionCleaningAndTransformingData]: https://github.com/levizimmerman/fe3-extra-time/blob/master/readme.md#cleaning-and-transforming-data-advanced-7h
+[sectionD3Dispatch]: https://github.com/levizimmerman/fe3-extra-time/blob/master/readme.md#d3-dispatch-2h

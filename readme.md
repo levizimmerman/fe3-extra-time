@@ -45,7 +45,7 @@ d3.json(topoFile, function(err, data) {
 In this example I have used [topoJSON][topoJSONResource] feature of D3 to extract path coordinates pointing the `.feature()` to `data.objects.europe` object. Then foreach country object a path will be drawn and attributes will be added to identify each country using `data-country-name` as link. This link makes it possible to call each country and change it path options based on user interaction.
 
 ## CSV Hierarchy with D3 (2h)
-For the multiple exercises ([class-3-transition][class3Transition] and [class-4-interactivity][class4Interactivity]) I have used hierarchical data from this [example][flareExample]. The goal was creating and understanding clustered data. That means data that have a parent key in common. In this way I could color, transform, filter or sort elements that share the same level of depth within the hierarchy.
+For the multiple exercises ([class-3-transition][class3Transition] and [class-4-interactivity][class4Interactivity]) I have used hierarchical data from this [example][flareExample]. The goal was creating and understanding clustered data. That means data that have a parent in common. In this way I could color, transform, filter or sort elements that share the same level of depth within the hierarchy.
 
 The following is an example of the CSV data that can be made hierarchical in D3:
 ```csv
@@ -87,7 +87,7 @@ The level of depth is signified with a dot (`.`). In this example you can see th
 "y": 236.31475240847757
 ```
 
-As you can see this data object has a property called `parent` this is reference to its parent. Every data element has this reference. In this way it is possible to understand the relationship between the different data elements. With the D3 [`.pack()`][packDocs] function it is possible to create a circle pack layout with the data object I just created using [`.hierarchy()`][hierarchyDocs]. The bubble chart is a stone throw away after creating the pack layout.
+As you can see this data object has a property called `parent` this is reference to its parent. Every data element has this reference. In this way it is possible to understand the relationship between the different data elements. With the D3 [`.pack()`][packDocs] function it is possible to create a circle pack layout with the data object I just created using [`.hierarchy()`][hierarchyDocs]. The bubble chart is a stone's throw away after creating the pack layout.
 
 ## D3 Nesting (5h)
 For the [last assessment][thirdAssessment] I used a dataset from the Health App of iOS. This dataset is XML formatted and has data records about step count, flights climbed, distance walked or ran, and sleep rythm. Every record is a measurement over a time period of 5 minutes, sleep rythm excluded. This means that every day multiple data entries can be available. Eventually I would display the activity data (step count, flights climbed, and distance walked or ran) in relation to the sleep rythm data. Because the sleep rythm is measured per day, I wanted to merge every activity data entry to one data entry per day. To do that I used the [`.nest()`][nestDocs] function.

@@ -223,7 +223,7 @@ function parseValue(value) {
 }
 ```
 
-Every type attribute has a prefix: 'HKQuantityTypeIdentifier' or 'HKCategoryTypeIdentifier'. Hence the `OR` operator within the [`.replace()`][jsReplace] function. Also this functions pushes the tyoe to a global `types` array. In this way you could log which types of records are transformed.
+Every type attribute has a prefix: 'HKQuantityTypeIdentifier' or 'HKCategoryTypeIdentifier'. Hence the `OR` operator within the [`.replace()`][jsReplace] function. Also this function pushes the tyoe to a global `types` array. In this way you could log which types of records are transformed.
 ```javascript
 function parseType(type) {
   type = type.replace(/HKQuantityTypeIdentifier|HKCategoryTypeIdentifier/g, '');
